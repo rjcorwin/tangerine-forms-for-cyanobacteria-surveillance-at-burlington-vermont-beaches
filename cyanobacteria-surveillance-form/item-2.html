@@ -1,0 +1,40 @@
+<form on-change="
+  if (getValue('murky_water') !== 'yes') {
+    inputHide('can_pick_it_up_with_a_stick')
+    inputHide('has_leafs')
+    inputHide('is_yellow')
+    inputHide('is_pea_soup')
+    inputHide('is_blue_green')
+  } else {
+    inputShow('can_pick_it_up_with_a_stick')
+    inputShow('has_leafs')
+    inputShow('is_yellow')
+    inputShow('is_pea_soup')
+    inputShow('is_blue_green')
+  }
+">
+  <tangy-radio-buttons name="murky_water" required label="Can you see that the water is murky in a spots in the vacinity?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+  <tangy-radio-buttons hidden required name="can_pick_it_up_with_a_stick" label="Can you pick up the obstruction with a stick?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+  <tangy-radio-buttons hidden required name="has_leafs" label="Does the obstruction have separate leafs?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+  <tangy-radio-buttons hidden required name="is_yellow" label="Is the obstruction yellow in color?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+  <tangy-radio-buttons hidden required name="is_pea_soup" label="Does the obstruction look like pea soup?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+  <tangy-radio-buttons hidden required name="is_blue_green" label="Does the obstruction look like blue green paint spill on the water's suface?" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </tangy-radio-buttons>
+</form>

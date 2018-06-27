@@ -1,4 +1,12 @@
 <form on-change="
+  let selectedLocation = inputs.location.getSelectedLocation()
+  if (selectedLocation) {
+    inputs.gps.setAttribute('reference-latitude', selectedLocation.latitude)
+    inputs.gps.setAttribute('reference-longitude', selectedLocation.longitude)
+  }
 ">
-  <tangy-location required label="Which beach are you at?" name="location" show-levels="beach"></tangy-location>
+  <h2>Which beach are you currently located?</h2>
+  <img src="assets/cyanobacteria-surveillance-form/map.png" style="width: 50%">
+  <tangy-location required name="location" show-levels="beach"></tangy-location>
+  <tangy-gps name="gps" valid-max-delta=30></tangy-gps>
 </form>
