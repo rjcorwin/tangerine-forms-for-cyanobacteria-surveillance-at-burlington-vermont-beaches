@@ -1,0 +1,13 @@
+<form on-open="
+  if (getValue('is_pea_soup') === 'yes' || getValue('is_blue_green') === 'yes') {
+    this.shadowRoot.querySelector('#feedback').innerHTML = `
+        This may be a Cyanobacteria bloom. Please report it promptly.
+    `
+  } else {
+    this.shadowRoot.querySelector('#feedback').innerHTML = `
+        This is not likely a Cyanobacteria bloom.
+    `
+  }
+">
+    <div id="feedback"></div>
+</form>
